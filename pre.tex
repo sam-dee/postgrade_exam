@@ -1,0 +1,202 @@
+\documentclass[oneside,12pt]{article}
+\textwidth=16cm \oddsidemargin=0pt \evensidemargin=0pt
+\usepackage[english,russian]{babel}
+\usepackage{amsmath,amsthm,amssymb}
+\let\amslrcorner\lrcorner
+\usepackage[T2A]{fontenc}
+\usepackage{amscd}
+\usepackage{oldgerm}
+\usepackage[matrix,arrow,curve]{xy}
+\usepackage{tikz-cd}
+\usepackage{enumerate}
+\usepackage{comment}
+%\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{extpfeil} 
+\usepackage{cmap}
+\usepackage{MnSymbol}
+\let\lrcorner\amslrcorner
+\usepackage{mathrsfs}
+\usetikzlibrary{babel}
+\definecolor{linkcolor}{HTML}{799B03} % цвет ссылок
+\definecolor{urlcolor}{HTML}{799B03} % цвет гиперссылок
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor,
+	colorlinks=true}
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Теорема}[section]
+\newtheorem{exercise}[thm]{Упражнение}
+\newtheorem*{thm1}{Теорема}
+\newtheorem{cor}[thm]{Следствие}
+\newtheorem{lem}[thm]{Лемма}
+\newtheorem{utv}[thm]{Утверждение}
+\newtheorem{zad}[thm]{Задача}
+\newtheorem{prop}[thm]{Предложение}
+\newtheorem{prop*}[thm]{*Предложение}
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Определение}
+%\newtheorem{dfn}{Определение}[section]
+\newtheorem{dfn*}{*Определение}[section]
+\newtheorem*{defn1}{Определение}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Замечание}
+\newtheorem{example}{Пример}[section]
+\numberwithin{equation}{section}
+\renewcommand{\proofname}{Доказательство}
+\numberwithin{equation}{section}
+
+% MATH -----------------------------------------------------------
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\til}[1]{\tilde{#1}}
+\newcommand{\on}[1]{#1_1, \ld, #1_n}
+\newcommand{\onn}[2]{#1_{1}, \ld, #1_{#2}}
+\newcommand{\sko}[2]{\underset{#2}{\underbrace{#1}}}
+\newcommand{\us}[2]{\underset{#1}{#2}}
+\newcommand{\os}[2]{\overset{#1}{#2}}
+\newcommand{\lio}[1]{\overline{1,#1}}
+\newcommand{\uns}[1]{\underset{#1}{\lRa}}
+\newcommand{\lin}[2]{\overline{#1,#2}}
+\newcommand{\glr}[1]{\glqq \textit{#1}\grqq}
+\newcommand{\gen}[1]{\left\langle#1\right\rangle}
+\newcommand{\bra}[1]{\left(#1\right)}
+\newcommand{\dpr}[2]{\left(#1\shortmid#2\right)}% Dot product
+\newcommand{\spr}[1]{\underset{#1}{\sup}}% Supremum
+\newcommand{\infim}[1]{\underset{#1}{\inf}}% Supremum
+\newcommand{\eps}{\varepsilon}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\coker}{\mathrm{coker}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\codim}{\mathrm{codim}}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\0}{\varnothing}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\CN}{\mathbb{C}}
+\newcommand{\HN}{\mathbb{H}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\M}{\mathrm{M}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\RN}{\mathbb{R}}
+\newcommand{\tr}{\mathrm{t}}
+\newcommand{\trace}{\mathrm{tr}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\spec}{\mathrm{Spec}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\OG}{\mathrm{O}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\m}{\mathrm{M}}
+\newcommand{\un}{\mathrm{U}}
+\newcommand{\UG}{\mathrm{U}}
+\newcommand{\re}{\operatorname{Re}}
+%\DeclareMathOperator{\re}{re}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\cha}{\mathrm{char}}
+\newcommand{\ovl}{\overline}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\mf}[1]{{\mathfrak{#1}}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\smz}{\setminus\set{0}}
+\newcommand{\PS}{\operatorname{P}}
+\DeclareMathOperator{\noreq}{\trianglelefteq}
+\newcommand{\Co}{\mathbb{C}}
+\newcommand{\al}{\alpha}
+\newcommand{\grad}{\mathrm{grad}}
+\newcommand{\di}{\mathrm{div}}
+\newcommand{\Sh}{\mathrm{sh}}
+\newcommand{\Ch}{\mathrm{ch}}
+\newcommand{\ou}{\overline{u}}
+\newcommand{\lr}{\Leftrightarrow}
+\newcommand{\la}{\lambda}
+\newcommand{\oa}{\overline{a}}
+\newcommand{\rr}{\Rightarrow}
+\newcommand{\lar}{\Leftarrow}
+\newcommand{\ota}{\overline{\tau}} 
+\newcommand{\oor}{\overline{r}}
+\newcommand{\te}{\theta}
+\newcommand{\ti}{\times}
+\newcommand{\ci}{\circ}
+\newcommand{\mt}{\mapsto}
+\newcommand{\cd}{\cdot}
+\newcommand{\lcm}{\mathrm{lcm}}
+\newcommand{\gc}{\mathrm{gcd}}
+\newcommand{\vn}{\varnothing}
+\newcommand{\inv}{\mathrm{inv}}
+\newcommand{\mult}{\mathrm{mult}}
+\newcommand{\bij}{\mathrm{Bij}}
+\newcommand{\ph}{\varphi}
+\newcommand{\fa}{\forall}
+\newcommand{\ld}{\ldots}
+\newcommand{\sla}{\slash}
+\newcommand{\De}{\Delta}
+\newcommand{\de}{\delta}
+\newcommand{\op}{\oplus}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\hr}{\hookrightarrow}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\p}{\mathbb{P}}
+\newcommand{\sset}{\subset}
+\newcommand{\sse}{\subseteq}
+\newcommand{\chr}{\mathrm{char}}
+\newcommand{\unl}{\unlhd}
+\newcommand{\unr}{\unrhd}
+\newcommand{\orr}{\vee}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\lra}{\leftrightarrow}
+\newcommand{\Lra}{\Leftrightarrow}
+\newcommand{\eqv}{\equiv}
+\newcommand{\mo}{\mathrm{mod} \;}
+\newcommand{\ox}{\overline{x}}
+\newcommand{\oy}{\overline{y}}
+\newcommand{\andd}{\;\& \;}
+\newcommand{\pp}{ \; \; \; \; \; \;}
+\newcommand{\gm}{\mathfrak{m}}
+\newcommand{\gp}{\mathfrak{p}}
+\newcommand{\isp}{\mathrm{Spec}}
+\newcommand{\ima}{\mathrm{Max}}
+\newcommand{\deff}{\mathrm{def}}
+\newcommand{\ot}{\overline{t}}
+\newcommand{\vd}{\vdots}
+\newcommand{\pip}{\; | \;}
+\newcommand{\npip}{\not | \;}
+\newcommand{\del}{ \mathop{\raisebox{-2pt}{\vdots}} \;}
+\newcommand{\ex}{\exists}
+\newcommand{\bu}{\bullet}
+\newcommand{\La}{\Leftarrow}
+\newcommand{\irr}{\mathrm{Irr}}
+\newcommand{\bs}{\backslash}
+\newcommand{\lRa}{\Longrightarrow}
+\newcommand{\tc}{:}
+\newcommand{\li}{\limits}
+\newcommand{\lc}{\mathrm{lc}}
+\newcommand{\rat}{\rightarrowtail}
+\newcommand{\inj}{\mathrm{Inj}}
+\newcommand{\cld}{\cd \ld \cd}
+\newcommand{\ldz}{,\ld,}
+\newcommand{\be}{\beta}
+\newcommand{\trig}{\mathrm{Trig}}
+\newcommand{\tdeg}{\mathrm{tdeg}}
+\newcommand{\po}{\mathcal{O}}
+\newcommand{\ga}{\gamma}
+\newcommand{\lt}{\leadsto}
+\newcommand{\Map}{\mathrm{Map}}
+\newcommand{\supp}{\mathrm{Supp}}
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\nex}{\nexists}
+\newcommand{\dcup}{\bigsqcup}
+\newcommand{\si}{\sigma}
+\newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\kN}{\mathcal{N}}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\hkr}{\hookrightarrow}
+\newcommand{\Char}{\mathrm{char}}
+\newcommand{\gal}{\mathrm{Gal}}
+\newcommand{\ity}{\infty}
